@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action=" " method="post" onsubmit="return validatedata()">
+    {% csrf_token %}
+<label for="" >
+    value 1
+    <input type="text" name="t1" id="t1">
+</label><br><br>
+<label for="" >
+    value 2
+    <input type="text" name="t2" id="t2">
+</label><br><br>
+<input type="submit" value="addition" name="add"> 
+<input type="submit" value="subs" name="sub">
+<input type="submit" value="multi" name="multi">
+<input type="submit" value="division" name="'div">
+</form>
+{% if action == 'Addition' %}
+<p style="color: red;">{{action}}</p>
+{% elif action == 'substraction' %}
+<p style="color:blueviolet;">{{action}}</p>
+{% elif action == 'multiplication' %}
+<p style="color:blue;">{{action}}</p>
+{% else %}
+<p style="color:orange;">{{action}}</p>
+{% endif %}
+<p>{{result}}</p>
+<p>{{msg}}</p>
+{% endblock %}
+ 
+{% block test %}
+{% endblock %}
+  
